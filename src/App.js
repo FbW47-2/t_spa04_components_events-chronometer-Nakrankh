@@ -1,10 +1,14 @@
 import React from "react"
-function App() {
+import Chronometer from './components/Chronometer'
+import './App.css'
+
+function App()
+{
   return (
-    <div className="App">
-      <h1>My React App</h1>
-    </div>
+    <>
+      <h1>React Chrono</h1>
+      <Chronometer/>
+    </>
   );
 }
-
 export default App;
