@@ -28,7 +28,7 @@ const Chronometer = () =>
             min = 0;
             setM(min);
         }
-    }
+    };
 
     const handleStart = (e) =>
     {
@@ -54,25 +54,23 @@ const Chronometer = () =>
         setCS(0);
         setS(0);
         setM(0);
-        [ csec, sec, min ] = [...Array(3).fill(0)]
+        [ csec, sec, min ] = Array(3).fill(0);
     }
 
     const timerCondition =
     {
         [true]: '0',
         [false]: ''
-    }
+    };
 
     return (
         <div>
             <div className="container chrono">
-                <div className="">
-                    { 
-                        timerCondition[m < 10] + m + ":"
-                        + timerCondition[s < 10] + s + ":"
-                        + timerCondition[cs < 10] + cs
-                    }
-                </div>
+                { 
+                    timerCondition[m < 10] + m + ":"
+                    + timerCondition[s < 10] + s + ":"
+                    + timerCondition[cs < 10] + cs
+                }
             </div>
             <div className="container buttons">
                 <button onClick={ handleStart }>Start</button>
